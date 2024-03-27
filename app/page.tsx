@@ -1,3 +1,7 @@
+// page.tsx is a special Next.js file that exports a React component, and it's required for the route to be accessible. In your application, you already have a page file: /app/page.tsx - this is the home page associated with the route /.
+// /app/ is associated with the / path
+// /app/dashboard/page.tsx is associated with the /dashboard path
+
 import AcmeLogo from '@/app/ui/acme-logo';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
