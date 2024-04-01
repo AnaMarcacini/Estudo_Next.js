@@ -1,0 +1,21 @@
+renderização estática
+
+Com a renderização estática, a busca e a renderização de dados acontecem no servidor no momento da construção (quando você implanta) ou durante a revalidação . O resultado pode então ser distribuído e armazenado em cache em uma Content Delivery Network (CDN).
+
+Sempre que um usuário visita seu aplicativo, o resultado armazenado em cache é exibido. Existem alguns benefícios da renderização estática:
+
+Sites mais rápidos – O conteúdo pré-renderizado pode ser armazenado em cache e distribuído globalmente. Isso garante que usuários de todo o mundo possam acessar o conteúdo do seu site de forma mais rápida e confiável.
+Carga reduzida do servidor – Como o conteúdo é armazenado em cache, seu servidor não precisa gerar conteúdo dinamicamente para cada solicitação do usuário.
+SEO - O conteúdo pré-renderizado é mais fácil de ser indexado pelos rastreadores dos mecanismos de pesquisa, pois o conteúdo já está disponível quando a página é carregada. Isso pode levar a melhores classificações nos mecanismos de pesquisa.
+A renderização estática é útil para UI sem dados ou dados compartilhados entre os usuários , como uma postagem de blog estática ou uma página de produto. Pode não ser uma boa opção para um painel que tenha dados personalizados atualizados regularmente.
+
+
+
+renderização dinâmica?
+
+
+Com a renderização dinâmica, o conteúdo é renderizado no servidor para cada usuário no momento da solicitação (quando o usuário visita a página). Existem alguns benefícios da renderização dinâmica:
+
+Dados em tempo real - A renderização dinâmica permite que seu aplicativo exiba dados em tempo real ou atualizados com frequência. Isto é ideal para aplicações onde os dados mudam frequentemente.
+Conteúdo específico do usuário – É mais fácil fornecer conteúdo personalizado, como painéis ou perfis de usuário, e atualizar os dados com base na interação do usuário.
+Informações sobre o horário da solicitação - A renderização dinâmica permite acessar informações que só podem ser conhecidas no momento da solicitação, como cookies ou parâmetros de pesquisa de URL.
