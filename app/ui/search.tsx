@@ -17,7 +17,11 @@ export default function Search({ placeholder }: { placeholder: string }) {
     // <Table>é um componente de servidor que busca seus próprios dados, para que você possa passar a searchParamspropriedade da página para o componente.
     // Como regra geral, se você quiser ler os parâmetros do cliente, use o useSearchParams()gancho, pois evita ter que voltar ao servidor.
 
-  function handleSearch(term: string) {
+
+
+  const handleSearch = useDebouncedCallback((term) => {
+
+  // function handleSearch(term: string) {
     //Explicação da função
       // ${pathname}é o caminho atual, no seu caso, "/dashboard/invoices".
       // À medida que o usuário digita na barra de pesquisa, params.toString()traduz essa entrada em um formato compatível com URL.
@@ -32,7 +36,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     }
     replace(`${pathname}?${params.toString()}`); //A URL é atualizada sem recarregar a página, graças à navegação do lado do cliente do Next.js 
 
-  }
+  }, 300); // só atualiza se o usuario ficar sem digitar por 300ms
 
   // Você está atualizando o URL a cada pressionamento de tecla e, portanto, consultando seu banco de dados a cada pressionamento de tecla! Isso não é um problema, pois nosso aplicativo é pequeno, mas imagine se seu aplicativo tivesse milhares de usuários, cada um enviando uma nova solicitação ao seu banco de dados a cada pressionamento de tecla. Debouncing é uma prática de programação que limita a taxa na qual uma função pode ser acionada. No nosso caso, você só deseja consultar o banco de dados quando o usuário parar de digitar.
 
@@ -41,6 +45,8 @@ export default function Search({ placeholder }: { placeholder: string }) {
   // Evento de gatilho : quando ocorre um evento que deveria ser cancelado (como um pressionamento de tecla na caixa de pesquisa), um cronômetro é iniciado.
   // Aguardar : Se um novo evento ocorrer antes do cronômetro expirar, o cronômetro será redefinido.
   // Execução : Se o cronômetro atingir o final de sua contagem regressiva, a função debounce é executada.
+
+  // Ao debouncing, você pode reduzir o número de solicitações enviadas ao seu banco de dados, economizando recursos.
 
 
 
