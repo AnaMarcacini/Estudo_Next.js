@@ -19,5 +19,8 @@ export default function Loading() {
 
 // Como loading.tsxé um nível superior /invoices/page.tsxe /customers/page.tsxno sistema de arquivos, também se aplica a essas páginas.
 
-// Podemos mudar isso com Grupos de Rotas. Crie uma nova pasta chamada /(overview)dentro da pasta do painel. Em seguida, mova seus arquivos loading.tsxe page.tsxpara dentro da pasta:
+// Podemos mudar isso com Grupos de Rotas. Crie uma nova pasta chamada /(overview)dentro da pasta do painel. Em seguida, mova seus arquivos loading.tsx e page.tsx para dentro da pasta:
 
+// Agora, o loading.tsxarquivo será aplicado apenas à página de visão geral do painel.
+
+// Os grupos de rotas permitem organizar arquivos em grupos lógicos sem afetar a estrutura do caminho da URL. Ao criar uma nova pasta usando parênteses (), o nome não será incluído no caminho do URL. Assim /dashboard/(overview)/page.tsxse torna /dashboard.
