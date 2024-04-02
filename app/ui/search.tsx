@@ -29,6 +29,8 @@ export default function Search({ placeholder }: { placeholder: string }) {
       // A URL é atualizada sem recarregar a página, graças à navegação do lado do cliente do Next.js (que você aprendeu no capítulo sobre navegação entre páginas ).
     console.log(`Searching... ${term}`);
     const params = new URLSearchParams(searchParams); //URLSearchParamsé uma API da Web que fornece métodos utilitários para manipular os parâmetros de consulta de URL. Em vez de criar uma string literal complexa, você pode usá-la para obter a string de parâmetros como ?page=1&query=a. ----- traduz essa entrada em um formato compatível com URL
+    params.set('page', '1');
+
     if (term) {
       params.set('query', term); 
     } else { //Se a entrada estiver vazia
