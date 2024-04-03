@@ -22,7 +22,11 @@ import { fetchCardData } from '@/app/lib/data'; // função sql que importa os u
 
 import { Suspense } from 'react';
 import { RevenueChartSkeleton ,LatestInvoicesSkeleton, CardsSkeleton,} from '@/app/ui/skeletons';
-
+import { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'dash',
+};
 export default async function Page() {
   // const revenue = await fetchRevenue(); //To fetch data for the <RevenueChart/> component, import the fetchRevenue function from data.ts and call it inside your component: 
   // const latestInvoices = await fetchLatestInvoices();

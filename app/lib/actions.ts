@@ -7,9 +7,27 @@ import { z } from 'zod';
 import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-
+import { signIn } from '@/auth';
+import { AuthError } from 'next-auth';
 //Next.js possui um cache de roteador do lado do cliente que armazena os segmentos da rota no navegador do usuário por um tempo. Junto com a pré-busca , esse cache garante que os usuários possam navegar rapidamente entre as rotas enquanto reduz o número de solicitações feitas ao servidor. Como você está atualizando os dados exibidos na rota de faturas, você deseja limpar esse cache e acionar uma nova solicitação ao servidor. Você pode fazer isso com a revalidatePathfunção do Next.js:
-
+export async function authenticate(
+  prevState: string | undefined,
+  formData: FormData,
+) {
+  try {
+    await signIn('credentials', formData);
+  } catch (error) {
+    if (error instanceof AuthError) {
+      switch (error.type) {
+        case 'CredentialsSignin':
+          return 'Invalid credentials.';
+        default:
+          return 'Something went wrong.';
+      }
+    }
+    throw error;
+  }
+}
 export async function deleteInvoice(id: string) {
     // throw new Error('Failed to Delete Invoice'); //gerando um erro proposital
     //Agora, vamos verificar o que acontece quando um erro é gerado na sua ação do servidor. Você pode fazer isso lançando um erro anteriormente 

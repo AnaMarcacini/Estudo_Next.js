@@ -6,7 +6,7 @@ POSTGRES_USER="default"
 POSTGRES_HOST="ep-mute-mode-a4raw8sk-pooler.us-east-1.aws.neon.tech"
 POSTGRES_PASSWORD="X2lHBUYT0bOL"
 POSTGRES_DATABASE="verceldb"
-
+AUTH_SECRET="QH4eryfyKiylZxUdbeukDXDbBJwXhEaZu1yzyZM+zts="
 
 
 // export POSTGRES_URL="postgres://default:X2lHBUYT0bOL@ep-mute-mode-a4raw8sk-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
