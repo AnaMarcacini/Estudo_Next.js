@@ -139,7 +139,8 @@ Add a ternary operator that checks for each specific error. For example, after t
         {state.errors?.status &&
           state.errors.status.map((error: string) => (
             <p className="mt-2 text-sm text-red-500" key={error}>
-              {error}
+              {error} 
+              {/* {state.errors.status} */}
             </p>
           ))}
       </div>
@@ -166,3 +167,26 @@ Add a ternary operator that checks for each specific error. For example, after t
     
   );
 }
+// export type State = {
+//   errors?: {
+//     customerId?: string[];
+//     amount?: string[];
+//     status?: string[];
+//   };
+//   message?: string | null;
+// };
+
+{/* <div id="any-error" aria-live="polite" aria-atomic="true">
+{state.message && // existe erro (null ou texto)
+    <p className="mt-2 text-sm text-red-500" >
+      {state.message} // print mensagem
+    </p>
+  } */}
+
+
+  // {state.errors?.amount && // existe erro
+  //   state.errors.amount.map((error: string) => ( // retira a string de carateres
+  //     <p className="mt-2 text-sm text-red-500" key={error}>
+  //       {error}
+  //     </p>
+  //   ))}
