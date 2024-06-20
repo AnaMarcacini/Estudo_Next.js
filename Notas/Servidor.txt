@@ -1,6 +1,0 @@
-Usando componentes de servidor para buscar dados
-Por padrão, os aplicativos Next.js usam React Server Components . A busca de dados com componentes de servidor é uma abordagem relativamente nova e há alguns benefícios em usá-los:
-
-Os componentes do servidor suportam promessas, fornecendo uma solução mais simples para tarefas assíncronas, como busca de dados. Você pode usar async/awaita sintaxe sem precisar procurar bibliotecas useEffectou useStatebuscar dados.
-Os componentes do servidor são executados no servidor, para que você possa manter lógica e buscas de dados caras no servidor e enviar apenas o resultado ao cliente.
-Conforme mencionado anteriormente, como os componentes do servidor são executados no servidor, você pode consultar o banco de dados diretamente, sem uma camada API adicional.
